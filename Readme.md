@@ -1,6 +1,6 @@
 # Личный проект «Нёрдс»
 
-* Студент: [Mihails :)Bodrins](https://up.htmlacademy.ru/htmlcss/29/user/841749).
+* Студент: [Mihails Bodrins](https://up.htmlacademy.ru/htmlcss/29/user/841749).
 * Наставник: [Татьяна Симоненко](https://htmlacademy.ru/profile/tatien).
 
 ---
