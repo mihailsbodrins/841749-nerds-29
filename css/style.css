@@ -1,0 +1,108 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'),
+       url('../fonts/roboto.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto.woff') format('woff'); /* Modern Browsers */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+       url('../fonts/robotomedium.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/robotomedium.woff') format('woff'); /* Modern Browsers */
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('../fonts/robotobold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/robotobold.woff') format('woff'); /* Modern Browsers */
+}
+
+/* Variables */
+
+:root {
+  --basic-black: #000000;
+  --basic-cod-gray: #283136;
+  --basic-charcoal: #444444;
+  --basic-dim-gray: #666666;
+  --basic-whisper: #EEEEEE;
+  --basic-white: #FFFFFF;
+  --basic-red: #FB565A;
+  --basic-jade: #00CA74;
+  --basic-golden: #EFC849;
+
+  --special-gray: rgba(0,0,0,0.3);
+  --special-dark-red: #E74246;
+  --special-extra-dark-red: #D7373B;
+  --special-dark-jade: #00BC6C;
+  --special-extra-dark-jade: #00AA62;
+  --special-dark-golden: #EAB534;
+  --special-extra-dark-golden: #E5A722;
+  --special-gainsboro: #DFDFDF;
+  --special-light-gray: #D5D5D5;
+  --special-border-gray: #DBDBDB;
+  --special-popup-gray: #C1C1C1;
+}
+
+/* Global */
+
+body {
+  min-width: 1440px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main navigation */
+
+.main-navigation {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: var(--basic-whisper);
+}
+
+.site-navigation {
+  list-style: none;
+}
+
+.site-navigation a,
+.cart a {
+  color: var(--basic-black);
+}
+
+.site-navigation a:hover,
+.cart a:hover {
+  color: var(--basic-red);
+}
+.site-navigation a:focus,
+.cart a:focus {
+  color: var(--special-gray);
+}
+
+.site-navigation :active,
+.cart a:active {
+  color: var(--basic-black);
+}
