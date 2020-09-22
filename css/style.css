@@ -41,6 +41,7 @@
   --basic-jade: #00CA74;
   --basic-golden: #EFC849;
 
+  --special-dark: rgba(0, 1, 1, 0.1);
   --special-gray: rgba(0,0,0,0.3);
   --special-dark-red: #E74246;
   --special-extra-dark-red: #D7373B;
@@ -61,11 +62,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', Arial, sans-serif;
-  font-family: Roboto;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  color: var(--basic-black);
+  color: var(--basic-cod-gray);
   background-color: var(--basic-white);
 }
 
@@ -81,6 +81,7 @@ img {
   line-height: 30px;
   font-weight: 500;
   text-transform: uppercase;
+  color: var(--basic-black);
   background-color: var(--basic-whisper);
 }
 
@@ -91,18 +92,194 @@ img {
 .site-navigation a,
 .cart a {
   color: var(--basic-black);
+  text-decoration: none;
 }
 
+/* .active-page-navigation a {
+  color: var(--basic-black);
+  border-bottom: 2px solid var(--basic-red);
+ }*/ /* свойство для активной странице */
+
 .site-navigation a:hover,
-.cart a:hover {
+.site-navigation a:focus,
+.cart a:hover,
+.cart a:focus {
   color: var(--basic-red);
 }
-.site-navigation a:focus,
-.cart a:focus {
+
+.site-navigation a:active,
+.cart a:active {
   color: var(--special-gray);
 }
 
-.site-navigation :active,
-.cart a:active {
+/* Services */
+
+.list-services {
+  list-style: none;
+}
+
+.item-service {
+  text-align: left;
+}
+
+.item-service h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
   color: var(--basic-black);
 }
+
+/* Button */
+
+.button {
+  font: inherit;
+  line-height: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--basic-white);
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: var(--basic-red);
+  border: none;
+  border-radius: 3px;
+}
+
+.button-service-web:hover,
+.button-service-web:focus {
+  background-color: var(--special-dark-red);
+}
+
+.button span:active {
+  opacity: 0.3;
+  mix-blend-mode: screen;
+}
+
+.button-service-web:active {
+  background-color: var(--special-extra-dark-red);
+  box-shadow: inset 0px 3px 0px var(--special-dark);
+}
+
+.button-service-app {
+  background-color: var(--basic-jade);
+}
+
+.button-service-app:hover,
+.button-service-app:focus {
+  background-color: var(--special-dark-jade);
+}
+
+.button-service-app:active {
+  background-color: var(--special-extra-dark-jade);
+  box-shadow: inset 0px 3px 0px var(--special-dark);
+}
+
+.button-service-present {
+  background-color: var(--basic-golden);
+}
+
+.button-service-present:hover,
+.button-service-present:focus {
+  background-color: var(--special-dark-golden);
+}
+
+.button-service-present:active {
+  background-color: var(--special-extra-dark-golden);
+  box-shadow: inset 0px 3px 0px var(--special-dark);
+}
+
+/* About company */
+
+.about-us {
+  font-size: 45px;
+  line-height: 45px;
+  font-weight: 500;
+  color: var(--basic-black);
+}
+
+.about-order {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-weight: 700;
+  text-align: center;
+  color: var(--basic-black);
+  text-transform: uppercase;
+}
+
+.list-advantages-number {
+  font-size: 45px;
+  line-height: 64px;
+  font-weight: 700;
+  color: var(--basic-black);
+}
+
+.list-advantages-number sup {
+  font-size: 26px;
+  line-height: 40px;
+  font-weight: 700;
+  color: var(--basic-black);
+}
+
+/* Main footer */
+/* Location */
+
+.location-name {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  color: var(--basic-black);
+}
+
+.location-address,
+.contacts-phone {
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: none;
+  color: var(--basic-dim-gray);
+}
+
+/* Main footer */
+/* Social-networks */
+
+.social {
+  list-style: none;
+}
+
+.social-networks p {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 700;
+  color: var(--basic-black);
+}
+
+.social-networks p:last-child {
+  font: inherit;
+  line-height: 22px;
+  color: var(--basic-charcoal);
+}
+
+
+/* Social button */
+
+.social-button {
+  color: var(--basic-white);
+  background-color: linear-gradient(0deg, #E1E1E1, #E1E1E1), #FFFFFF;
+}
+
+.social-button:hover,
+.social-button:focus {
+  background: linear-gradient(0deg, #E74246, #E74246), #FFFFFF;
+}
+
+.social-button a:active {
+  opacity: 0.3;
+  mix-blend-mode: screen;
+}
+.social-button:active {
+  background: linear-gradient(0deg, #D7373B, #D7373B), #FFFFFF;
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+}
+
