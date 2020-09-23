@@ -100,10 +100,11 @@ img {
   color: var(--basic-black);
 }
 
-/* .active-page-navigation a {
+.active-page-shop a,
+.active-page-blank a{
   color: var(--basic-black);
   border-bottom: 2px solid var(--basic-red);
- }*/ /* свойство для активной странице */
+ } /* свойство для активной странице */
 
 .site-navigation a:hover,
 .site-navigation a:focus,
