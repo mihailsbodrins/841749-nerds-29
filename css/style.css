@@ -17,6 +17,7 @@
   src: local('Roboto Medium'), local('Roboto-Medium'),
        url('../fonts/robotomedium.woff2') format('woff2'), /* Super Modern Browsers */
        url('../fonts/robotomedium.woff') format('woff'); /* Modern Browsers */
+  font-display: swap;
 }
 
 @font-face {
@@ -26,6 +27,7 @@
   src: local('Roboto Bold'), local('Roboto-Bold'),
        url('../fonts/robotobold.woff2') format('woff2'), /* Super Modern Browsers */
        url('../fonts/robotobold.woff') format('woff'); /* Modern Browsers */
+  font-display: swap;
 }
 
 /* Variables */
@@ -53,6 +55,9 @@
   --special-light-gray: #D5D5D5;
   --special-border-gray: #DBDBDB;
   --special-popup-gray: #C1C1C1;
+  --special-gradient-gray: #E1E1E1;
+  --special-gradient-red: #E74246;
+  --special-gradient-dark-red: #D7373B;
 }
 
 /* Global */
@@ -91,8 +96,8 @@ img {
 
 .site-navigation a,
 .cart a {
-  color: var(--basic-black);
   text-decoration: none;
+  color: var(--basic-black);
 }
 
 /* .active-page-navigation a {
@@ -146,7 +151,9 @@ img {
 }
 
 .button-service-web:hover,
-.button-service-web:focus {
+.button-service-web:focus,
+.button-location:hover,
+.button-location:focus {
   background-color: var(--special-dark-red);
 }
 
@@ -155,7 +162,8 @@ img {
   mix-blend-mode: screen;
 }
 
-.button-service-web:active {
+.button-service-web:active,
+.button-location:active {
   background-color: var(--special-extra-dark-red);
   box-shadow: inset 0px 3px 0px var(--special-dark);
 }
@@ -264,22 +272,33 @@ img {
 
 /* Social button */
 
-.social-button {
+.social-button svg {
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
   color: var(--basic-white);
-  background-color: linear-gradient(0deg, #E1E1E1, #E1E1E1), #FFFFFF;
+  background: linear-gradient(0deg, var(--special-gradient-gray), var(--special-gradient-gray)), var(--basic-white);
 }
 
-.social-button:hover,
-.social-button:focus {
-  background: linear-gradient(0deg, #E74246, #E74246), #FFFFFF;
+
+
+.social li:hover,
+.social li:focus {
+  background: linear-gradient(0deg, var(--special-gradient-red), var(--special-gradient-red)), var(--basic-white);
 }
 
-.social-button a:active {
+.social-button svg:active {
   opacity: 0.3;
   mix-blend-mode: screen;
 }
-.social-button:active {
-  background: linear-gradient(0deg, #D7373B, #D7373B), #FFFFFF;
-  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+.social li:active {
+  background: linear-gradient(0deg, var(--special-gradient-dark-red), var(--special-gradient-dark-red)), var(--basic-white);
+  box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
+.visually-hidden {
+  visibility: hidden;
+  display: none;
+}
