@@ -45,6 +45,7 @@
 
   --special-dark: rgba(0, 1, 1, 0.1);
   --special-gray: rgba(0,0,0,0.3);
+  --special-white: rgba(0, 0, 0, 0.0001);
   --special-dark-red: #E74246;
   --special-extra-dark-red: #D7373B;
   --special-dark-jade: #00BC6C;
@@ -232,6 +233,103 @@ img {
   color: var(--basic-black);
 }
 
+/* Inner page */
+
+.page-title {
+  font-size: 55px;
+  line-height: 55px;
+  font-weight: 500;
+  color: var(--basic-black);
+  background-color: var(--basic-whisper);
+}
+
+/* Filters */
+/* Здесь будет форма фильтра */
+
+/* Catalog */
+
+.catalog-list {
+  list-style: none;
+}
+
+.catalog-item {
+  background-color: var(--basic-whisper);
+}
+
+.catalog-item-sample h3 {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.catalog-item-sample h3:hover,
+.catalog-item-sample h3:focus {
+  color: var(--basic-red);
+}
+
+.catalog-item-sample h3:active {
+  color: var(--basic-black);
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.catalog-item-sample p {
+  line-height: 18px;
+  color: var(--basic-dim-gray);
+}
+
+/* Button-catalog */
+
+.button-catalog:hover,
+.button-catalog:focus {
+  background-color: var(--special-dark-red);
+}
+
+.button-catalog:active {
+  background-color: var(--special-extra-dark-red);
+  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  border-radius: 3px;
+}
+
+/* Pagination */
+
+.pagination-list {
+  list-style: none;
+}
+
+.pagination-item a {
+  line-height: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--basic-black);
+  background-color: var(--basic-whisper);
+  border-radius: 3px;
+}
+
+.pagination-item-current a {
+  background-color: var(--special-white);
+  border: 3px solid var(--special-border-gray);
+  border-radius: 3px;
+}
+
+.pagination-item a:hover,
+.pagination-item-current a:hover,
+.pagination-item a:focus,
+.pagination-item-current a:focus {
+  background-color: var(--special-gainsboro);
+  border: none;
+}
+
+.pagination-item a:active,
+.pagination-item-current a:active {
+  background-color: var(--special-light-gray);
+  box-shadow: inset 0px 3px 0px var(--special-dark);
+  opacity: 0.3;
+  mix-blend-mode: normal;
+ }  /*Принажатии кнопки, хочеться болле т>мный фон. Меня вводит сомнения как работает свойство mix-blend-mode*/
+
 /* Main footer */
 /* Location */
 
@@ -277,7 +375,6 @@ img {
   width: 81px;
   height: 81px;
   border-radius: 50%;
-  text-align: center;
   text-decoration: none;
   color: var(--basic-white);
   background: linear-gradient(0deg, var(--special-gradient-gray), var(--special-gradient-gray)), var(--basic-white);
