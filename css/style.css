@@ -233,6 +233,25 @@ img {
   color: var(--basic-black);
 }
 
+/* Main partners */
+
+.partners {
+  list-style: none;
+}
+
+.item-partner img {
+  opacity: 0.2;
+}
+
+.item-partner img:hover,
+.item-partner img:focus {
+  opacity: 1;
+}
+
+.item-partner img:active {
+  opacity: 0.1;
+}
+
 /* Inner page */
 
 .page-title {
