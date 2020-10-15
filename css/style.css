@@ -59,6 +59,14 @@
   --special-gradient-gray: #E1E1E1;
   --special-gradient-red: #E74246;
   --special-gradient-dark-red: #D7373B;
+
+  --grid-scarlet:  rgba(255, 36, 0, 0.3);
+  --grid-indigo: rgba(75, 0, 130, 0.3);
+  --grid-myrtle: rgba(0, 64, 0, 0.3);
+  --grid-magenta: rgba(255 ,0, 255, 0.3);
+  --grid-yellow: rgba(255, 251, 2, 0.7);
+  --grid-red-orange: rgba(255, 53, 53, 0.3);
+  --grid-aqua: rgba(2, 255, 242, 0.3);
 }
 
 /* Global */
@@ -102,14 +110,12 @@ img {
     "filters filters1 filters1"
     "filters catalog catalog";
   grid-template-columns: 400px 1fr;
-  align-content: start;
-  outline: 5px solid  rgba(255, 2, 234, 0.3);
-  outline-offset: -5px;
 }
 
 .page-catalog .page-title {
   grid-area: page-title;
-  outline: 5px solid  rgba(40, 2, 255, 0.3);
+
+  outline: 5px solid var(--grid-scarlet);
   outline-offset: -5px;
 }
 
@@ -118,7 +124,8 @@ img {
 .main-header {
   padding-top: 50px;
   background-color: var(--basic-whisper);
-  outline: 5px solid  rgba(96 ,96 ,191, 0.3);
+
+  outline: 5px solid var(--grid-indigo);
   outline-offset: -5px;
 }
 
@@ -134,7 +141,8 @@ img {
   font-weight: 500;
   text-transform: uppercase;
   color: var(--basic-black);
-  outline: 5px solid  rgba(85, 252, 85, 0.3);
+
+  outline: 5px solid var(--grid-myrtle);
   outline-offset: -5px;
 }
 
@@ -149,7 +157,8 @@ img {
   padding: 0;
   text-align: center;
   list-style: none;
-  outline: 5px solid  rgba(246, 85, 252, 0.3);
+
+  outline: 5px solid  var(--grid-magenta);
   outline-offset: -5px;
 }
 
@@ -159,11 +168,12 @@ img {
   color: var(--basic-black);
 }
 
+/* свойство для активной странице */
 .active-page-shop a,
 .active-page-blank a{
   color: var(--basic-black);
   border-bottom: 2px solid var(--basic-red);
- } /* свойство для активной странице */
+ }
 
 .site-navigation a:hover,
 .site-navigation a:focus,
@@ -179,7 +189,8 @@ img {
 
 .cart {
   margin: 0;
-  outline: 5px solid  rgba(255, 251, 2, 0.877);
+
+  outline: 5px solid var(--grid-myrtle);
   outline-offset: -5px;
 }
 
@@ -189,7 +200,7 @@ img {
   width: 1160px;
   margin: 0 auto;
   padding: 0;
-  outline: 5px solid  rgba(255, 251, 2, 0.877);
+  outline: 5px solid var(--grid-yellow);
   outline-offset: -5px;
 }
 
@@ -198,7 +209,8 @@ img {
 .services {
   margin-top: 80px;
   margin-bottom: 80px;
-  outline: 5px solid  rgba(255, 2, 2, 0.3);
+
+  outline: 5px solid var(--grid-red-orange);
   outline-offset: -5px;
 }
 
@@ -208,15 +220,17 @@ img {
   column-gap: 100px;
   margin: 0;
   padding: 0;
-  outline: 5px solid  rgba(69, 2, 255, 0.3);
-  outline-offset: -5px;
   list-style: none;
+
+  outline: 5px solid var(--grid-indigo);
+  outline-offset: -5px;
 }
 
 .item-service {
-  outline: 5px solid  rgba(2, 255, 242, 0.3);
-  outline-offset: -5px;
   text-align: left;
+
+  outline: 5px solid var(--grid-aqua);
+  outline-offset: -5px;
 }
 
 .item-service h3 {
@@ -225,6 +239,23 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   color: var(--basic-black);
+}
+
+.service-picture {
+  width: 300px;
+  height: 146px;
+}
+
+.service-picture.laptop {
+  background-image: url(../img/illustration-1.png);
+}
+
+.service-picture.cellphone {
+  background-image: url(../img/illustration-2.png);
+}
+
+.service-picture.board-slide {
+  background-image: url(../img/illustration-3.png);
 }
 
 /* Button */
@@ -293,13 +324,14 @@ img {
 .about-company {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  padding: 73px 0; /* Возможны такие отступы или мне надо насторожиться? */
-  outline: 5px solid  rgba(255, 2, 200, 0.3);
+  padding: 73px 0;
+
+  outline: 5px solid var(--grid-scarlet);
   outline-offset: -5px;
 }
 
 .about-company-developer {
-  outline: 5px solid  rgba(2, 255, 242, 0.3);
+  outline: 5px solid var(--grid-aqua);
   outline-offset: -5px;
 }
 
@@ -316,7 +348,7 @@ img {
 }
 
 .about-company-statistics {
-  outline: 5px solid  rgba(188, 255, 2, 0.3);
+  outline: 5px solid var(--grid-indigo);
   outline-offset: -5px;
 }
 
@@ -350,14 +382,16 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  outline: 5px solid  rgba(188, 255, 2, 0.3);
+
+  outline: 5px solid var(--grid-myrtle);
   outline-offset: -5px;
 }
 
 .item-partner {
   align-self: center;
   text-align: center;
-  outline: 5px solid  rgba(40, 2, 255, 0.3);
+
+  outline: 5px solid var(--grid-magenta);
   outline-offset: -5px;
 }
 
@@ -376,8 +410,6 @@ img {
 
 /* Inner page */
 
-
-
 .page-title {
   margin: 0;
   padding-top: 72px;
@@ -394,13 +426,15 @@ img {
 
 .filters {
   grid-area: filters;
-  outline: 5px solid  rgba(2, 255, 107, 0.3);
+
+  outline: 5px solid var(--grid-myrtle);
   outline-offset: -5px;
 }
 
 .filters1{
   grid-area: filters1;
-  outline: 5px solid  rgba(27, 2, 255, 0.3);
+
+  outline: 5px solid var(--grid-indigo);
   outline-offset: -5px;
 }
 /* Здесь будет форма фильтра */
@@ -409,7 +443,7 @@ img {
 
 .catalog {
   grid-area: catalog;
-  outline: 5px solid  rgba(255, 137, 2, 0.3);
+  outline: 5px solid var(--grid-aqua);
   outline-offset: -5px;
 }
 .catalog-list {
@@ -509,32 +543,35 @@ img {
   width: 1160px;
   margin: 0 auto;
   padding: 0;
-  outline: 5px solid  rgba(255, 251, 2, 0.877);
+
+  outline: 5px solid var(--grid-yellow);
   outline-offset: -5px;
 }
 
-.location{
-  outline: 5px solid  rgba(217, 255, 2, 0.3);
-  outline-offset: -5px;
+.location {
   display: grid;
-  grid-template-columns: 1fr auto;
-  /* width: 1440px; */
+  grid-template-columns: 1fr;
+  width: 1440px;
   height: 416px;
-  margin: 0 auto;
-  background-image: url("img/map.png");
+  margin: 0 -140px;
+  background-image: url("../img/map.png"); /* Нужно оцентрировать карту */
   background-position: center;
   background-repeat: no-repeat;
-  /* не работает подключение карты */
+
+  outline: 5px solid var(--grid-red-orange);
+  outline-offset: -5px;
 }
 
 .location-company {
   width: 319px;
   height: 308px;
+  margin: 0 140px;
   padding-top: 49px;
   padding-left: 50px;
   align-self: center;
   background-color: var(--basic-white);
-  outline: 5px solid  rgba(255, 2, 200, 0.3);
+
+  outline: 5px solid var(--grid-magenta);
   outline-offset: -5px;
 }
 
@@ -558,22 +595,25 @@ img {
 
 .social-networks {
   display: grid;
-  grid-template-columns: 400px 3fr;
-  outline: 5px solid  rgba(255, 2, 200, 0.3);
+  grid-template-columns: 400px 1fr;
+
+  outline: 5px solid var(--grid-aqua);
   outline-offset: -5px;
 }
 
 .social {
   margin: 0;
-  outline: 5px solid  rgba(2, 255, 99, 0.3);
-  outline-offset: -5px;
   list-style: none;
+
+  outline: 5px solid var(--grid-indigo);
+  outline-offset: -5px;
 }
 
 .social-discount {
   align-self: center;
   color: var(--basic-black);
-  outline: 5px solid  rgba(2, 40, 255, 0.3);
+
+  outline: 5px solid var(--grid-myrtle);
   outline-offset: -5px;
 }
 
