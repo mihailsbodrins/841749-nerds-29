@@ -132,8 +132,10 @@ img {
 /* Main navigation  */
 
 .main-navigation {
-  display: grid;
-  grid-template-columns: 160px 1fr min-content;
+  display: flex;
+  justify-content: space-between;
+  /* display: grid;
+  grid-template-columns: 160px 1fr min-content; */
   width: 1160px;
   margin: 0 auto;
   font-size: 16px;
@@ -149,17 +151,25 @@ img {
 /* Logo */
 
 .main-header-logo {
-  text-align: left;
+  height: 65px;
 }
+/* Почему в этом блоке автоматически появляется нижний отступ в 10px  */
 
 .site-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
-  text-align: center;
   list-style: none;
 
   outline: 5px solid  var(--grid-magenta);
   outline-offset: -5px;
+}
+
+.site-navigation li {
+  margin-right: 45px;
 }
 
 .site-navigation a,
@@ -188,7 +198,12 @@ img {
 }
 
 .cart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin: 0;
+  padding: 0;
 
   outline: 5px solid var(--grid-myrtle);
   outline-offset: -5px;
@@ -539,21 +554,20 @@ img {
 /* Main footer */
 /* Location */
 
-.main-footer {
-  width: 1160px;
+.container-footer {
   margin: 0 auto;
-  padding: 0;
 
   outline: 5px solid var(--grid-yellow);
   outline-offset: -5px;
 }
+
 
 .location {
   display: grid;
   grid-template-columns: 1fr;
   width: 1440px;
   height: 416px;
-  margin: 0 -140px;
+  margin: 0 auto;
   background-image: url("../img/map.png"); /* Нужно оцентрировать карту */
   background-position: center;
   background-repeat: no-repeat;
@@ -569,6 +583,7 @@ img {
   padding-top: 49px;
   padding-left: 50px;
   align-self: center;
+  box-sizing: border-box;
   background-color: var(--basic-white);
 
   outline: 5px solid var(--grid-magenta);
@@ -594,19 +609,31 @@ img {
 /* Social-networks */
 
 .social-networks {
+  width: 1160px;
+  height: 217px;
   display: grid;
   grid-template-columns: 400px 1fr;
+  margin: 0 auto;
 
   outline: 5px solid var(--grid-aqua);
   outline-offset: -5px;
 }
 
 .social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
   margin: 0;
+  padding: 0;
   list-style: none;
 
   outline: 5px solid var(--grid-indigo);
   outline-offset: -5px;
+}
+
+.social li {
+  padding-right: 9px;
 }
 
 .social-discount {
@@ -619,6 +646,7 @@ img {
 
 .social-discount p:first-child{
   margin: 0;
+  padding-bottom: 10px;
   font-size: 36px;
   line-height: 36px;
   font-weight: 700;
