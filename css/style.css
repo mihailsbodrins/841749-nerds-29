@@ -151,7 +151,11 @@ img {
 /* Logo */
 
 .main-header-logo {
+  width: 160px;
   height: 65px;
+
+  outline: 5px solid  var(--grid-magenta);
+  outline-offset: -5px;
 }
 /* Почему в этом блоке автоматически появляется нижний отступ в 10px  */
 
@@ -167,9 +171,13 @@ img {
   outline: 5px solid  var(--grid-magenta);
   outline-offset: -5px;
 }
+/* не отцентрировал блок до конца*/
 
 .site-navigation li {
-  margin-right: 45px;
+  padding-right: 45px;
+}
+.site-navigation li:first-child {
+  padding-left: 45px;
 }
 
 .site-navigation a,
@@ -231,7 +239,7 @@ img {
 
 .list-services {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 300px);
   column-gap: 100px;
   margin: 0;
   padding: 0;
@@ -242,7 +250,9 @@ img {
 }
 
 .item-service {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   outline: 5px solid var(--grid-aqua);
   outline-offset: -5px;
@@ -257,6 +267,7 @@ img {
 }
 
 .service-picture {
+  order: -1;
   width: 300px;
   height: 146px;
 }
