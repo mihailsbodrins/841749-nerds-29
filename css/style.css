@@ -72,7 +72,7 @@
 /* Global */
 
 body {
-  min-width: 1440px;
+  /* min-width: 1440px; */
   margin: 0;
   padding: 0;
   font-family: 'Roboto', Arial, sans-serif;
@@ -88,6 +88,19 @@ img {
   height: auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* Grid */
 
 .page {
@@ -97,7 +110,7 @@ img {
 .page body {
   min-height: 100%;
   display: grid;
-  grid-template-rows: min-content auto min-content;
+  grid-template-rows: min-content 1fr min-content;
   align-content: start;
 }
 
@@ -114,19 +127,18 @@ img {
 
 .page-catalog .page-title {
   grid-area: page-title;
-
-  outline: 5px solid var(--grid-scarlet);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-scarlet);
+  outline-offset: -5px; */
 }
 
 /* Main header */
 
 .main-header {
-  padding-top: 50px;
   background-color: var(--basic-whisper);
-
-  outline: 5px solid var(--grid-indigo);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-indigo);
+  outline-offset: -5px; */
 }
 
 /* Main navigation  */
@@ -137,84 +149,116 @@ img {
   /* display: grid;
   grid-template-columns: 160px 1fr min-content; */
   width: 1160px;
-  margin: 0 auto;
+  margin: 50px auto 0;
   font-size: 16px;
   line-height: 30px;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--basic-black);
-
-  outline: 5px solid var(--grid-myrtle);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
 }
 
 /* Logo */
 
 .main-header-logo {
+  /* display: flex; */
+  /* align-self: center; */
   width: 160px;
   height: 65px;
-
-  outline: 5px solid  var(--grid-magenta);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid  var(--grid-magenta);
+  outline-offset: -5px; */
 }
 /* Почему в этом блоке автоматически появляется нижний отступ в 10px  */
+
+/* Site Navigation */
 
 .site-navigation {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  width: 800px;
   margin: 0;
   padding: 0;
   list-style: none;
-
-  outline: 5px solid  var(--grid-magenta);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid  var(--grid-magenta);
+  outline-offset: -5px; */
 }
 /* не отцентрировал блок до конца*/
 
-.site-navigation li {
-  padding-right: 45px;
+/* Cart Navigation */
+
+.cart-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 170px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
 }
-.site-navigation li:first-child {
-  padding-left: 45px;
+
+.cart-items a::before {
+  content: "";
+  position: absolute;
+  top: 33px;
+  right: 110px;
+  width: 15px;
+  height: 15px;
+  background-image: url("../img/cart-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.cart-items a {
+  padding-right: 0;
+  position: relative;
 }
 
 .site-navigation a,
-.cart a {
+.cart-navigation a {
   text-decoration: none;
   color: var(--basic-black);
+  display: block;
+  padding: 25px 23px 19px 22px;
 }
 
 /* свойство для активной странице */
 .active-page-shop a,
-.active-page-blank a{
+.active-page-blank a {
   color: var(--basic-black);
   border-bottom: 2px solid var(--basic-red);
  }
 
 .site-navigation a:hover,
 .site-navigation a:focus,
-.cart a:hover,
-.cart a:focus {
+.cart-navigation a:hover,
+.cart-navigation a:focus {
   color: var(--basic-red);
 }
 
-.site-navigation a:active,
-.cart a:active {
-  color: var(--special-gray);
+/* Неменяется лого */
+.main-header-logo img::after:active {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 65px;
+  background-image: url("../img/nerds-logo-before.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
-.cart {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-
-  outline: 5px solid var(--grid-myrtle);
-  outline-offset: -5px;
+.site-navigation a:active,
+.cart-navigation a:active {
+  color: var(--special-gray);
 }
 
 /* Main */
@@ -223,18 +267,20 @@ img {
   width: 1160px;
   margin: 0 auto;
   padding: 0;
-  outline: 5px solid var(--grid-yellow);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-yellow);
+  outline-offset: -5px; */
 }
 
 /* Services */
 
 .services {
+  position: relative;
   margin-top: 80px;
   margin-bottom: 80px;
-
-  outline: 5px solid var(--grid-red-orange);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-red-orange);
+  outline-offset: -5px; */
 }
 
 .list-services {
@@ -244,26 +290,31 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-
-  outline: 5px solid var(--grid-indigo);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-indigo);
+  outline-offset: -5px; */
 }
 
 .item-service {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  outline: 5px solid var(--grid-aqua);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-aqua);
+  outline-offset: -5px; */
 }
 
 .item-service h3 {
+  margin-top: 25px;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--basic-black);
+}
+
+.item-service p {
+  margin-top: -8px;
 }
 
 .service-picture {
@@ -284,12 +335,22 @@ img {
   background-image: url(../img/illustration-3.png);
 }
 
+.services::after {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  width: 1158px;
+  height: 2px;
+  background-color: var(--basic-whisper);
+}
+
 /* Button */
 
 .button {
   font: inherit;
   line-height: 18px;
   font-weight: 500;
+  padding: 17px 0 15px;
   text-align: center;
   color: var(--basic-white);
   vertical-align: middle;
@@ -297,6 +358,20 @@ img {
   background-color: var(--basic-red);
   border: none;
   border-radius: 3px;
+}
+
+.item-service .button-service-app,
+.item-service .button-service-web,
+.item-service .button-service-present {
+  margin-top: 17px;
+  padding-right: 40px;
+  padding-left: 39px;
+}
+
+.location .button-location {
+  margin-top: 18px;
+  padding-right: 44px;
+  padding-left: 44px;
 }
 
 .button-service-web:hover,
@@ -348,17 +423,28 @@ img {
 /* About company */
 
 .about-company {
+  position: relative;
   display: grid;
   grid-template-columns: 3fr 1fr;
   padding: 73px 0;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-scarlet);
+  outline-offset: -5px; */
+}
 
-  outline: 5px solid var(--grid-scarlet);
-  outline-offset: -5px;
+.about-company::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 1158px;
+  height: 2px;
+  background-color: var(--basic-whisper);
 }
 
 .about-company-developer {
-  outline: 5px solid var(--grid-aqua);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-aqua);
+  outline-offset: -5px; */
 }
 
 .about-us {
@@ -374,8 +460,9 @@ img {
 }
 
 .about-company-statistics {
-  outline: 5px solid var(--grid-indigo);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-indigo);
+  outline-offset: -5px; */
 }
 
 .caption {
@@ -401,6 +488,19 @@ img {
 
 /* Main partners */
 
+.main-partners {
+  position: relative;
+}
+
+.main-partners::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  width: 1158px;
+  height: 2px;
+  background-color: var(--basic-whisper);
+}
+
 .partners {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -408,17 +508,28 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-
-  outline: 5px solid var(--grid-myrtle);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
 }
 
 .item-partner {
+  position: relative;
   align-self: center;
   text-align: center;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-magenta);
+  outline-offset: -5px; */
+}
 
-  outline: 5px solid var(--grid-magenta);
-  outline-offset: -5px;
+.item-partner::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 2px;
+  height: 52px;
+  background-color: var(--basic-whisper);
 }
 
 .item-partner img {
@@ -452,16 +563,16 @@ img {
 
 .filters {
   grid-area: filters;
-
-  outline: 5px solid var(--grid-myrtle);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
 }
 
 .filters1{
   grid-area: filters1;
-
-  outline: 5px solid var(--grid-indigo);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-indigo);
+  outline-offset: -5px; */
 }
 /* Здесь будет форма фильтра */
 
@@ -469,8 +580,9 @@ img {
 
 .catalog {
   grid-area: catalog;
-  outline: 5px solid var(--grid-aqua);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-aqua);
+  outline-offset: -5px; */
 }
 .catalog-list {
   display: flex;
@@ -479,15 +591,16 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-
-  outline: 5px solid  rgba(10, 255, 2, 0.3);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid  rgba(10, 255, 2, 0.3);
+  outline-offset: -5px; */
 }
 
 .catalog-item {
   margin: 0 41px 31px 0;
   padding: 0;
   background-color: var(--basic-whisper);
+  /* Скрыл рамки */
   /* outline: 5px solid  rgba(2, 6, 255, 0.3);
   outline-offset: -5px; */
 }
@@ -542,9 +655,9 @@ img {
   margin-bottom: 75px;
   padding: 0;
   list-style: none;
-
-  outline: 5px solid  var(--grid-indigo);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid  var(--grid-indigo);
+  outline-offset: -5px; */
 }
 
 .pagination-item a {
@@ -584,11 +697,10 @@ img {
 
 .container-footer {
   margin: 0 auto;
-
-  outline: 5px solid var(--grid-yellow);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-yellow);
+  outline-offset: -5px; */
 }
-
 
 .location {
   display: grid;
@@ -599,23 +711,23 @@ img {
   background-image: url("../img/map.png"); /* Нужно оцентрировать карту */
   background-position: center;
   background-repeat: no-repeat;
-
-  outline: 5px solid var(--grid-red-orange);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-red-orange);
+  outline-offset: -5px; */
 }
 
 .location-company {
   width: 319px;
   height: 308px;
   margin: 0 140px;
-  padding-top: 49px;
+  padding-top: 30px;
   padding-left: 50px;
   align-self: center;
   box-sizing: border-box;
   background-color: var(--basic-white);
-
-  outline: 5px solid var(--grid-magenta);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-magenta);
+  outline-offset: -5px; */
 }
 
 .location-name {
@@ -627,6 +739,7 @@ img {
 
 .location-address,
 .contacts-phone {
+  padding-top: 6px;
   font-size: 16px;
   line-height: 18px;
   text-decoration: none;
@@ -642,9 +755,9 @@ img {
   display: grid;
   grid-template-columns: 400px 1fr;
   margin: 0 auto;
-
-  outline: 5px solid var(--grid-aqua);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-aqua);
+  outline-offset: -5px; */
 }
 
 .social {
@@ -655,21 +768,21 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-
-  outline: 5px solid var(--grid-indigo);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-indigo);
+  outline-offset: -5px; */
 }
 
 .social li {
-  padding-right: 9px;
+  padding-right: 12px;
 }
 
 .social-discount {
   align-self: center;
   color: var(--basic-black);
-
-  outline: 5px solid var(--grid-myrtle);
-  outline-offset: -5px;
+  /* Скрыл рамки */
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
 }
 
 .social-discount p:first-child{
@@ -691,31 +804,92 @@ img {
 
 /* Social button */
 
-.social-button svg {
-  width: 81px;
-  height: 81px;
+.social-button {
+  position: relative;
+  width: 79px;
+  height: 79px;
+  display: flex;
+  flex-wrap: wrap;
   border-radius: 50%;
-  text-decoration: none;
-  color: var(--basic-white);
   background: linear-gradient(0deg, var(--special-gradient-gray), var(--special-gradient-gray)), var(--basic-white);
 }
 
-.social li:hover,
-.social li:focus {
+.social-button .svg-vkontakte {
+  position: absolute;
+  top: 32px;
+  left: 26px;
+}
+
+.social-button .svg-facebook {
+  position: absolute;
+  top: 30px;
+  left: 34px;
+}
+
+.social-button .svg-instagram{
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+
+
+.social-button:hover,
+.social-button:focus {
   background: linear-gradient(0deg, var(--special-gradient-red), var(--special-gradient-red)), var(--basic-white);
 }
 
-.social-button svg:active {
+.social-button path:active {
   opacity: 0.3;
   mix-blend-mode: screen;
+  background: linear-gradient(0deg, var(--special-gradient-dark-red), var(--special-gradient-dark-red)), var(--basic-white);
 }
 
-.social li:active {
+.social-button:active {
   background: linear-gradient(0deg, var(--special-gradient-dark-red), var(--special-gradient-dark-red)), var(--basic-white);
   box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
-.visually-hidden {
-  visibility: hidden;
-  display: none;
+/* Pop-up */
+
+.main-pop-up {
+  background-color: var(--basic-whisper);
 }
+
+.pop-up {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pop-up p:first-child {
+  font-size: 55px;
+  line-height: 55px;
+  font-weight: 500;
+}
+
+.pop-up1 {
+  width: 760px;
+  height: 431px;
+  margin: 0 auto;
+  background-image: url("../img/nerds-index-slide1.png");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.pop-up2 {
+  width: 760px;
+  height: 431px;
+  margin: 0 auto;
+  background-image: url("../img/nerds-index-slide2.png");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.pop-up3 {
+  width: 760px;
+  height: 431px;
+  margin: 0 auto;
+  background-image: url("../img/nerds-index-slide3.png");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
