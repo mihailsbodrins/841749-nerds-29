@@ -130,18 +130,12 @@ img {
 
 .page-catalog .page-title {
   grid-area: page-title;
-  /* Скрыл рамки */
-  /* outline: 5px solid var(--grid-scarlet);
-  outline-offset: -5px; */
 }
 
 /* Main header */
 
 .main-header {
   background-color: var(--basic-whisper);
-  /* Скрыл рамки */
-  /* outline: 5px solid var(--grid-indigo);
-  outline-offset: -5px; */
 }
 
 /* Main navigation  */
@@ -149,71 +143,65 @@ img {
 .main-navigation {
   display: flex;
   justify-content: space-between;
-  /* display: grid;
-  grid-template-columns: 160px 1fr min-content; */
   width: 1160px;
-  margin: 50px auto 0;
+  height: 30px;
+  margin: 75px auto 0;
   font-size: 16px;
   line-height: 30px;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--basic-black);
-  /* Скрыл рамки */
-  /* outline: 5px solid var(--grid-myrtle);
-  outline-offset: -5px; */
 }
 
 /* Logo */
 
 .main-header-logo {
-  /* display: flex; */
-  /* align-self: center; */
+  position: relative;
+  top: -27px;
   width: 160px;
   height: 65px;
-  /* Скрыл рамки */
-  /* outline: 5px solid  var(--grid-magenta);
-  outline-offset: -5px; */
 }
-/* Почему в этом блоке автоматически появляется нижний отступ в 10px  */
 
 /* Site Navigation */
 
 .site-navigation {
+
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  /* align-items: center; */
   width: 800px;
   margin: 0;
   padding: 0;
+  padding-right: 40px;
   list-style: none;
-  /* Скрыл рамки */
-  /* outline: 5px solid  var(--grid-magenta);
-  outline-offset: -5px; */
 }
-/* не отцентрировал блок до конца*/
+
+.site-navigation li {
+  padding-right: 45px;
+}
 
 /* Cart Navigation */
 
 .cart-navigation {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
   max-width: 170px;
   margin: 0;
-  padding: 0;
+  padding-left: 0px;
   list-style: none;
-  /* Скрыл рамки */
-  /* outline: 5px solid var(--grid-myrtle);
-  outline-offset: -5px; */
+}
+
+.cart-items {
+  display: flex;
+  align-items: center;
 }
 
 .cart-items a::before {
   content: "";
   position: absolute;
-  top: 33px;
-  right: 110px;
+  top: 8px;
+  right: 100px;
   width: 15px;
   height: 15px;
   background-image: url("../img/cart-icon.svg");
@@ -222,16 +210,14 @@ img {
 }
 
 .cart-items a {
-  padding-right: 0;
   position: relative;
+  justify-content: flex-end;
 }
 
 .site-navigation a,
 .cart-navigation a {
   text-decoration: none;
   color: var(--basic-black);
-  display: block;
-  padding: 25px 23px 19px 22px;
 }
 
 /* свойство для активной странице */
@@ -338,15 +324,6 @@ img {
   background-image: url(../img/illustration-3.png);
 }
 
-.services::after {
-  content: "";
-  position: absolute;
-  bottom: -70px;
-  width: 1158px;
-  height: 2px;
-  background-color: var(--basic-whisper);
-}
-
 /* Button */
 
 .button {
@@ -366,7 +343,7 @@ img {
 .item-service .button-service-app,
 .item-service .button-service-web,
 .item-service .button-service-present {
-  margin-top: 17px;
+  margin-top: 16px;
   padding-right: 40px;
   padding-left: 39px;
 }
@@ -429,16 +406,25 @@ img {
   position: relative;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  padding: 73px 0;
+  padding: 30px 0;
   /* Скрыл рамки */
   /* outline: 5px solid var(--grid-scarlet);
   outline-offset: -5px; */
 }
 
+.about-company::before {
+  content: "";
+  position: absolute;
+  /* bottom: -50px; */
+  width: 1158px;
+  height: 2px;
+  background-color: var(--basic-whisper);
+}
+
 .about-company::after {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: 1px;
   width: 1158px;
   height: 2px;
   background-color: var(--basic-whisper);
@@ -451,6 +437,8 @@ img {
 }
 
 .about-us {
+  margin: 45px 0 32px;
+  padding: 0;
   font-size: 45px;
   line-height: 45px;
   font-weight: 500;
@@ -458,8 +446,23 @@ img {
 }
 
 .about-order {
+  margin-top: 42px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.list-capability {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-capability {
+  margin: 22px 35px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 .about-company-statistics {
@@ -1048,48 +1051,120 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
-/* Pop-up */
+/* slider */
 
-.main-pop-up {
-  /* position: absolute; */
+.site-wrapper {
   background-color: var(--basic-whisper);
 }
 
-.pop-up {
-  display: flex;
-  justify-content: space-between;
+.slider {
+  position: relative;
+  height: 440px;
+  width: 1160px;
+  margin: auto;
 }
 
-.pop-up p:first-child {
+.slider-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider-item {
+  padding-top: 32px;
+}
+
+.slide {
+  display: none;
+}
+
+.slide-current {
+  display: block;
+}
+
+.slider-item p:first-child {
+  margin-bottom: 0;
+  padding-bottom: 10px;
   font-size: 55px;
   line-height: 55px;
   font-weight: 500;
 }
 
-.pop-up1 {
-  width: 760px;
-  height: 431px;
-  margin: 0 auto;
+.slider-item p:last-of-type {
+  margin-bottom: 53px;
+  color: var(--basic-cod-gray);
+}
+
+.slide-button {
+  padding-right: 55px;
+  padding-bottom: 14px;
+  padding-left: 54px;
+  text-decoration: none;
+}
+
+.slider-block {
+  position: relative;
+}
+
+.slider-block-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider-image-1 {
   background-image: url("../img/nerds-index-slide1.png");
-  background-position: right;
-  background-repeat: no-repeat;
 }
 
-.pop-up2 {
-  width: 760px;
-  height: 431px;
-  margin: 0 auto;
+.slider-image-2 {
   background-image: url("../img/nerds-index-slide2.png");
-  background-position: right;
-  background-repeat: no-repeat;
 }
 
-.pop-up3 {
+.slider-image-3 {
+  background-image: url("../img/nerds-index-slide3.png");
+}
+
+.curent-slider-image {
+  position: absolute;
+  right: 3px;
+  bottom: -92px;
   width: 760px;
   height: 431px;
-  margin: 0 auto;
-  background-image: url("../img/nerds-index-slide3.png");
-  background-position: right;
   background-repeat: no-repeat;
 }
 
+.slider-controls {
+  position: absolute;
+  bottom: 4px;
+  left: 536px;
+  z-index: 5;
+  display: flex;
+  width: 88px;
+  justify-content: space-between;
+}
+
+.slider-controls .button-controls-slider {
+  position: relative;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  background-color: var(--basic-white);
+  border-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-controls .current::after   {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--special-popup-gray);
+  background-color: var(--basic-white);
+  border-radius: 50%;
+  cursor: pointer;
+}
