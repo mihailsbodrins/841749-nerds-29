@@ -207,6 +207,29 @@
     </div>
   </footer>
 
+  <section class="modal modal-request">
+    <h2 class="visually-hidden"></h2>
+    <p class="modal-description">Напишите нам</p>
+    <form class="request-form" action="https://echo.htmlacademy.ru" method="post">
+      <div class="modal-name modal-request-form">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name"  placeholder="Имя Фамилия" autocomplete="on">
+      </div>
+      <div class="modal-email modal-request-form">
+        <label for="email">Ваш email:</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com" autocomplete="on">
+      </div>
+      <div class="modal-comment-field modal-request-form">
+        <label for="comment-field">Текст письма:</label>
+        <textarea name="comment" id="comment-field" rows="10">В свободной форме</textarea>
+      </div>
+      <div class="modal-request-button">
+        <input class="button button-modal" type="submit" value="Отправить">
+      </div>
+    </form>
+    <button class="modal-close" type="button" aria-label="Закрыть"></button>
+  </section>
+
 </body>
 
 </html>

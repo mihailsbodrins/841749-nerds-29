@@ -39,7 +39,7 @@
     <div class="container container-catalog">
       <section class="filters">
         <h2 class="visually-hidden">Фильтр шаблонов</h2>
-        <form class="filter" method="get" action="" target="_blank"> <!-- незнаю -->
+        <form class="filter" method="get" action="https://echo.htmlacademy.ru/" target="blank">
           <fieldset class="filter-item">
             <legend>Стоимость:</legend>
             <div class="range-filter">
@@ -52,10 +52,10 @@
               </div>
               <div class="price-controls">
                 <label class="min-price">
-                  от <input type="number" name="min-price" value="0">
+                  от <input type="text" name="min-price" value="0">
                 </label>
                 <label class="max-price">
-                  до <input type="number" name="max-price" value="15000">
+                  до <input type="text" name="max-price" value="15000">
                 </label>
               </div>
             </div>
@@ -113,18 +113,28 @@
           <p>Сортировать:</p>
           <div class="sort-type">
             <ul class="sort-type-list">
-              <li class="sort-type-current">По цене</li>
-              <li>По типу</li>
-              <li>По названию</li>
+              <li class="sort-type-current"><button type="button">По цене</button></li>
+              <li><button type="button">По типу</button></li>
+              <li><button type="button">По названию</button></li>
             </ul>
           </div>
           <div class="sort-control">
             <ul class="sort-control-list">
-              <li class="sort-control-current">
+              <li class="sort-control-min sort-control-current">
                 <span class="visually-hidden">По возрастанию</span>
+                <button class="control-min control-current" type="button">
+                  <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.5 10L0 0H11" fill="#A6A6A6"/>
+                  </svg>
+                </button>
               </li>
-              <li>
+              <li class="sort-control-max sort-control-item">
                 <span class="visually-hidden">По убыванию</span>
+                <button class="control-max" type="button">
+                  <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.5 0L0 10H11L5.5 0Z" fill="#A6A6A6"/>
+                  </svg>
+                </button>
               </li>
             </ul>
           </div>
@@ -134,10 +144,17 @@
       <section class="catalog">
         <h2 class="visually-hidden">Список готовых шаблонов</h2>
         <ul class="catalog-list">
-          <li class="catalog-item">
-            <a class="catalog-item-link" href="#">
-              <img src="img/catalog-sedona.jpg" width="358" height="578" alt="Шаблон: Sedona">
-            </a>
+          <li class="catalog-item catalog-item-current">
+            <div class="catalog-item-strip">
+              <svg width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D"/>
+              </svg>
+            </div>
+            <div class="catalog-item-link">
+              <a href="#">
+                <img src="img/catalog-sedona.jpg" width="358" height="578" alt="Шаблон: Sedona">
+              </a>
+            </div>
             <div class="catalog-item-sample">
               <h3>Sedona</h3>
               <p>Информационный сайт<br> для туристов</p>
@@ -145,9 +162,16 @@
             </div>
           </li>
           <li class="catalog-item">
-            <a href="#">
-              <img src="img/catalog-pink.jpg" width="358" height="578" alt="Шаблон: Pink app">
-            </a>
+            <div class="catalog-item-strip">
+              <svg width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D"/>
+              </svg>
+            </div>
+            <div class="catalog-item-link">
+              <a href="#">
+                <img src="img/catalog-pink.jpg" width="358" height="578" alt="Шаблон: Pink app">
+              </a>
+            </div>
             <div class="catalog-item-sample">
               <h3>Pink app</h3>
               <p>Продуктовый лендинг<br> приложения для iOS и Android</p>
@@ -155,9 +179,16 @@
             </div>
           </li>
           <li class="catalog-item">
-            <a href="#">
-              <img src="img/catalog-barbershop.jpg" width="358" height="578" alt="Шаблон: Barbershop">
-            </a>
+            <div class="catalog-item-strip">
+              <svg width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D"/>
+              </svg>
+            </div>
+            <div class="catalog-item-link">
+              <a href="#">
+                <img src="img/catalog-barbershop.jpg" width="358" height="578" alt="Шаблон: Barbershop">
+              </a>
+            </div>
             <div class="catalog-item-sample">
               <h3>Barbershop</h3>
               <p>Сайт салона красоты.<br> Для мужчин, да.</p>
@@ -165,9 +196,16 @@
             </div>
           </li>
           <li class="catalog-item">
-            <a href="#">
-              <img src="img/catalog-mishka.jpg" width="358" height="578" alt="Шаблон: MISHKA">
-            </a>
+            <div class="catalog-item-strip">
+              <svg width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D"/>
+              </svg>
+            </div>
+            <div class="catalog-item-link">
+              <a href="#">
+                <img src="img/catalog-mishka.jpg" width="358" height="578" alt="Шаблон: MISHKA">
+              </a>
+            </div>
             <div class="catalog-item-sample">
               <h3>MISHKA</h3>
               <p>Интернет-магазин<br> вязаных игрушек</p>
@@ -175,19 +213,33 @@
             </div>
           </li>
           <li class="catalog-item">
-            <a href="#">
-              <img src="img/catalog-aplus.jpg" width="358" height="578" alt="Шаблон: A Plus">
-            </a>
+            <div class="catalog-item-strip">
+              <svg width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D"/>
+              </svg>
+            </div>
+            <div class="catalog-item-link">
+              <a href="#">
+                <img src="img/catalog-aplus.jpg" width="358" height="578" alt="Шаблон: A Plus">
+              </a>
+            </div>
             <div class="catalog-item-sample">
               <h3>A Plus</h3>
-              <p>Лендинг курсов повышения квалификации</p>
+              <p>Лендинг курсов повышения<br> квалификации</p>
               <button class="button button-catalog" type="button">9 900 ₽</button>
             </div>
           </li>
           <li class="catalog-item">
-            <a href="#">
-              <img src="img/catalog-kvast.jpg" width="358" height="578" alt="Шаблон: Кваст">
-            </a>
+            <div class="catalog-item-strip">
+              <svg width="360" height="40" viewBox="0 0 360 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 0H356C358.2 0 360 1.8 360 4V40H0V4C0 1.8 1.8 0 4 0ZM16.9288 23.5C18.1792 25.6658 20.4901 27 22.991 27C26.857 27 29.991 23.866 29.991 20C29.991 16.134 26.857 13 22.991 13C20.4901 13 18.1792 14.3342 16.9288 16.5C15.6784 18.6658 15.6784 21.3342 16.9288 23.5ZM46.002 27C43.5011 27 41.1902 25.6658 39.9398 23.5C38.6893 21.3342 38.6893 18.6658 39.9398 16.5C41.1902 14.3342 43.5011 13 46.002 13C49.8679 13 53.002 16.134 53.002 20C53.002 23.866 49.8679 27 46.002 27ZM62.9508 23.5C64.2012 25.6658 66.5121 27 69.0129 27C72.8789 27 76.0129 23.866 76.0129 20C76.0129 16.134 72.8789 13 69.0129 13C66.5121 13 64.2012 14.3342 62.9508 16.5C61.7003 18.6658 61.7003 21.3342 62.9508 23.5Z" fill="#4D4D4D"/>
+              </svg>
+            </div>
+            <div class="catalog-item-link">
+              <a href="#">
+                <img src="img/catalog-kvast.jpg" width="358" height="578" alt="Шаблон: Кваст">
+              </a>
+            </div>
             <div class="catalog-item-sample">
               <h3>Кваст</h3>
               <p>Промо-сайт производителя<br> крафтового кваса</p>
@@ -216,6 +268,7 @@
   <footer class="main-footer">
     <div class="container-footer">
       <section class="location">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1012.2832715306829!2d30.319557101840715!3d59.93825436042397!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2slv!4v1604712400113!5m2!1sru!2slv" width="1440" height="416" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       <div class="location-company">
         <h2 class="visually-hidden">Как нас найти</h2>
         <p class="location-name">NЁRDS DESIGN STUDIO</p>

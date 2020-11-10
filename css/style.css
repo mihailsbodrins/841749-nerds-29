@@ -47,8 +47,11 @@
   --special-gray: rgba(0,0,0,0.3);
   --special-white: rgba(0, 0, 0, 0.0001);
   --special-shadow: rgba(0, 0, 0, 0.15);
+  --special-shadow-madal: rgba(0, 0, 0, 0.25);
   --special-black: #231F20;
   --special-matterhorn: #4D4D4D;
+  --special-gray-sort: #A6A6A6;
+  --special-pattens-blue: #D7DCDE;
   --special-white-smoke: rgba(242,242,242,1);
   --special-dark-red: #E74246;
   --special-extra-dark-red: #D7373B;
@@ -66,6 +69,7 @@
   --special-gradient-gray: #E1E1E1;
   --special-gradient-red: #E74246;
   --special-gradient-dark-red: #D7373B;
+  --special-wild-watermelon:rgba(251, 86, 90, 0.3);
 
   --grid-scarlet:  rgba(255, 36, 0, 0.3);
   --grid-indigo: rgba(75, 0, 130, 0.3);
@@ -255,7 +259,7 @@ img {
   top: 63px;
   left: 20%;
   content: "";
-  width: 73px;
+  width: 60%;
   height: 2px;
   background-color: var(--basic-red);
  }
@@ -774,11 +778,11 @@ img {
   overflow: hidden;
 }
 
-  .filter .filter-item:first-of-type {
+.filter .filter-item:first-of-type {
     margin-bottom: 54px;
   }
 
-  .filter .filter-item:last-of-type {
+.filter .filter-item:last-of-type {
     margin-top: 25px;
   }
 
@@ -816,7 +820,7 @@ img {
   top: -3px;
   width: 17px;
   height: 17px;
-  border: 4px solid var(--basic-cod-gray);
+  border: 4px solid var(--special-matterhorn);
   border-radius: 50%;
   opacity: 0.5;
 }
@@ -828,7 +832,7 @@ img {
   left: -28px;
   width: 9px;
   height: 9px;
-  background-color: var(--basic-cod-gray);
+  background-color: var(--special-matterhorn);
   border-radius: 50%;
   opacity: 0.5;
 }
@@ -840,12 +844,12 @@ img {
   top: -2px;
   width: 19px;
   height: 19px;
-  border: 2px solid var(--basic-cod-gray);
+  border: 2px solid var(--special-matterhorn);
   border-radius: 3px;
-  opacity: 0.5;
+  opacity: 0.5
 }
 
-.filter-input-checkbox:checked + label::after  {
+.filter-input-checkbox:checked + label::before  {
   content: "";
   position: absolute;
   top: -2px;
@@ -856,17 +860,13 @@ img {
   background-image: url("../img/checkbox-on.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+  border: none;
 }
 
 .filter-input:hover + label::before,
-.filter-input:focus + label::before  {
-  border: 4px solid var(--basic-cod-gray);
-  opacity: 1;
-}
-
-.filter-input:hover + label::after,
-.filter-input:focus + label::after  {
-  background-color: var(--basic-cod-gray);
+.filter-input:focus + label::before,
+.filter-input-radio:checked:hover + label::after,
+.filter-input-radio:checked:focus + label::after  {
   opacity: 1;
 }
 
@@ -909,7 +909,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 .sort-item {
   grid-area: sort;
   display: grid;
-  grid-template-columns: 400px 271px 88px;
+  grid-template-columns: 200px 471px 88px;
   /* Скрыл рамки */
   /* outline: 5px solid var(--grid-indigo);
   outline-offset: -5px; */
@@ -924,21 +924,21 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
 .sort-type {
-  display: flex; /* Как правильно выравнить? */
+  display: flex;
   /* outline: 5px solid var(--grid-indigo);
   outline-offset: -5px; */
 }
 
 .sort-type-list{
   display: flex;
-  width: 271px;
+  width: 471px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0;
   font-size: 14px;
   line-height: 18px;
   align-items: center;
-  align-self: center; /* Как правильно выравнить? */
+  align-self: center;
   text-transform: uppercase;
   list-style: none;
   /* outline: 5px solid var(--grid-indigo);
@@ -946,52 +946,117 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
 .sort-type-list li {
+  padding: 10px 13px 10px 14px ;
   opacity: 0.3;
+  /* outline: 5px solid var(--grid-indigo);
+  outline-offset: -5px; */
+}
+
+.sort-type-list li:last-child {
+  padding-right: 0;
 }
 
 .sort-type-list .sort-type-current {
   opacity: 1;
 }
 
+.sort-type-list button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sort-type-list li:hover,
+.sort-type-list li:focus {
+  opacity: 0.6;
+}
+
+.sort-type-list li:active {
+  opacity: 1;
+}
+
 .sort-control {
-  /* outline: 5px solid var(--grid-indigo);
+  display: flex;
+  justify-content: flex-end;
+  /* outline: 5px solid  rgba(10, 255, 2, 0.3);
+  outline-offset: -5px; */
+}
+.sort-control-list {
+  width: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* outline: 5px solid  rgba(10, 255, 2, 0.3);
   outline-offset: -5px; */
 }
 
-.sort-control-list{
-  display: flex;
-  flex-wrap: wrap;
+.sort-control-min{
+  padding: 8px;
 }
 
-.sort-control-list li {
+.sort-control-max{
+  padding: 8px 0 8px 10px;
+}
+
+.control-min,
+.control-max {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.control-current {
+  color: black;
+}
+
+
+
+/* .sort-control-min,
+.sort-control-max {
   position: relative;
   list-style: none;
-}
+} */
 
-.sort-control-list li::before {
+/* .sort-control-min::after {
   position: absolute;
   content: "";
   top: 11px;
   left: 7px;
   border: 6px solid transparent;
   border-top: 10px solid var(--special-black);
-  opacity: 0.05;
-}
+  opacity: 0.5;
+  cursor: pointer;
+  outline: 5px solid  rgba(10, 255, 2, 0.3);
+  outline-offset: -5px;
+} */
 
-.sort-control-list li::after {
+/* .sort-control-max::after {
   position: absolute;
   content: "";
   top: 5px;
   left: 37px;
   border: 6px solid transparent;
   border-bottom: 10px solid var(--special-black);
-  opacity: 0.05;
-}
+  opacity: 0.5;
+  cursor: pointer;
+} */
 
-.sort-control-current li::before,
-.sort-control-current li::after  {
-  opacity: 1;
-}
+/* .sort-control-min::after:hover,
+.sort-control-max::after,
+.sort-control-min::after:focus,
+.sort-control-max::after {
+  border-color: var(--special---special-gray-sort);
+} */
 
 /* Catalog */
 
@@ -1006,6 +1071,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   flex-wrap: wrap;
   width: 760px;
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 0;
   list-style: none;
   /* Скрыл рамки */
@@ -1016,39 +1082,37 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 .catalog-item {
   position: relative;
   width: 360px;
-  height: 578px;
-  margin: 40px 40px 31px 0;
+  height: 618px;
+  margin: 0px 40px 31px 0;
   padding: 0;
-  background-color: var(--basic-whisper);
-  border-radius: 0 0 5px 5px;
   /* Скрыл рамки */
   /* outline: 5px solid  rgba(2, 6, 255, 0.3);
   outline-offset: -5px; */
-}
-
-.catalog-item::before {
-  position: absolute;
-  content: "";
-  top: -40px;
-  width: 360px;
-  height: 40px;
-  background-color: var(--special-matterhorn);
-  border-radius: 5px 5px 0 0;
 }
 
 .catalog-item:nth-child(2n) {
   margin-right: 0px;
 }
 
+.catalog-item-strip {
+  margin: 0;
+  height: 40px;
+}
+
 .catalog-item .catalog-item-link {
-  width: 358px;
-  height: 578px;
+  width: 360px;
+  height: 580px;
   background-color: var(--special-white-smoke);
   border: 1px solid var(--special-white-smoke);
-  box-sizing: border-box;
   border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
   /* outline: 5px solid  rgba(2, 6, 255, 0.3);
   outline-offset: -5px; */
+}
+
+.catalog-item-current {
+  box-shadow: 0px 6px 15px rgba(0, 1, 1, 0.25);
+  border-radius: 5px;
 }
 
 .catalog-item-link img {
@@ -1058,15 +1122,25 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 
 .catalog-item-sample {
   position: absolute;
+  bottom: 0px;
   width: 360px;
+  height: 231px;
+  text-align: center;
+  background-color: var(--basic-whisper);
 }
 
 .catalog-item-sample h3 {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  padding: 8px;
   font-size: 18px;
   line-height: 30px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--basic-black);
+  box-sizing: border-box;
+  /* outline: 5px solid  rgba(2, 6, 255, 0.3);
+  outline-offset: -5px; */
 }
 
 .catalog-item-sample h3:hover,
@@ -1081,11 +1155,20 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
 .catalog-item-sample p {
+  margin: 0;
+  margin-bottom: 32px;
   line-height: 18px;
   color: var(--basic-dim-gray);
+  /* outline: 5px solid  rgba(2, 6, 255, 0.3);
+  outline-offset: -5px; */
 }
 
 /* Button-catalog */
+
+.button-catalog {
+  padding-right: 73px;
+  padding-left: 73px;
+}
 
 .button-catalog:hover,
 .button-catalog:focus {
@@ -1102,9 +1185,10 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 
 .pagination-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  width: 480px;
-  margin-bottom: 75px;
+  width: 600px;
+  margin-bottom: 58px;
   padding: 0;
   list-style: none;
   /* Скрыл рамки */
@@ -1113,6 +1197,8 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
 .pagination-item a {
+  display: block;
+  padding: 17px 20px 15px;
   margin-right: 11px;
   line-height: 18px;
   font-weight: 500;
@@ -1122,7 +1208,14 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   border-radius: 3px;
 }
 
-.pagination-item-current a {
+.pagination-item:last-child a{
+  margin-right: 0;
+  padding: 17px 77px 15px 78px;
+  text-transform: uppercase;
+}
+
+.pagination-item-current a{
+  padding: 14px 17px 12px;
   background-color: var(--special-white);
   border: 3px solid var(--special-border-gray);
   border-radius: 3px;
@@ -1132,6 +1225,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 .pagination-item-current a:hover,
 .pagination-item a:focus,
 .pagination-item-current a:focus {
+  padding: 17px 20px 15px;
   background-color: var(--special-gainsboro);
   border: none;
 }
@@ -1140,9 +1234,20 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 .pagination-item-current a:active {
   background-color: var(--special-light-gray);
   box-shadow: inset 0px 3px 0px var(--special-dark);
-  opacity: 0.3;
-  mix-blend-mode: normal;
  }  /*Принажатии кнопки, хочеться болле т>мный фон. Меня вводит сомнения как работает свойство mix-blend-mode*/
+
+ .pagination-item:last-child a:hover,
+ .pagination-item:last-child a:focus{
+  padding: 17px 77px 15px 78px;
+  background-color: var(--special-gainsboro);
+  border: none;
+  text-transform: uppercase;
+}
+
+.pagination-item:last-child a:active {
+  background-color: var(--special-light-gray);
+}
+
 
 /* Main footer */
 /* Location */
@@ -1436,3 +1541,165 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Modal login */
+
+.modal-request {
+  display: none;
+  top: auto;
+  bottom: 180px;
+  width: 761px;
+  height: 441px ;
+  padding: 64px 100px 84px;
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
+}
+
+.modal-request p {
+  margin-top: -2px;
+  margin-bottom: 37px;
+  font-size: 45px;
+  line-height: 53px;
+  font-weight: 700;
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
+}
+
+.request-form {
+  display: grid;
+  grid-template-areas:
+    "modal-name modal-email"
+    "modal-comment-field modal-comment-field"
+    "modal-request-button  modal-request-button";
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: 111px 1fr auto;
+}
+
+.modal-request-form label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.modal-request-form input,
+.modal-request-form textarea {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--basic-charcoal);
+  opacity: 0.5;
+}
+
+.modal-request-form input,
+.modal-request-form textarea {
+  border: 2px solid var(--special-pattens-blue);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.modal-request-form input:hover,
+.modal-request-form  textarea:hover {
+  border: 2px solid var(--basic-black);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+
+.modal-request-form input {
+  width: 360px;
+  height: 50px;
+  /* padding-right: 40px; */
+}
+
+.modal-request-form textarea {
+  width: 760px;
+  height: 117px;
+  margin-bottom: 41px;
+}
+
+.button-modal {
+  margin-left: 1px;
+  padding-right: 83px;
+  padding-left: 83px;
+}
+
+.modal-name {
+  grid-area: modal-name;
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
+}
+
+.modal-email {
+  grid-area: modal-email;
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
+}
+
+.modal-comment-field {
+  grid-area: modal-comment-field;
+  margin-left: 1px;
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
+}
+
+.modal-request-button {
+  grid-area: modal-request-button;
+  /* outline: 5px solid var(--grid-myrtle);
+  outline-offset: -5px; */
+}
+
+/* Modal close */
+
+.modal-close {
+  position: absolute;
+  top: 74px;
+  right: 91px;
+  width: 21px;
+  height: 21px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -3px;
+  width: 27px;
+  height: 3px;
+  /* background-color: red; */
+  background: var(--basic-red);
+  opacity: 0.3;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+/* Незнаю как сделать focus */
+/* .modal-close:hover,
+.modal-close:focus {
+  opacity: 1;
+} */
