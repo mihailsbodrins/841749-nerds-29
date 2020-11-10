@@ -1,32 +1,32 @@
 /* Fonts */
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'),
-       url('../fonts/roboto.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto.woff') format('woff'); /* Modern Browsers */
+  src: local("Roboto"), local("Roboto-Regular"),
+       url("../fonts/roboto.woff2") format("woff2"), /* Super Modern Browsers */
+       url("../fonts/roboto.woff") format("woff"); /* Modern Browsers */
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  src: local('Roboto Medium'), local('Roboto-Medium'),
-       url('../fonts/robotomedium.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/robotomedium.woff') format('woff'); /* Modern Browsers */
+  src: local("Roboto Medium"), local("Roboto-Medium"),
+       url("../fonts/robotomedium.woff2") format("woff2"), /* Super Modern Browsers */
+       url("../fonts/robotomedium.woff") format("woff"); /* Modern Browsers */
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'),
-       url('../fonts/robotobold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/robotobold.woff') format('woff'); /* Modern Browsers */
+  src: local("Roboto Bold"), local("Roboto-Bold"),
+       url("../fonts/robotobold.woff2") format("woff2"), /* Super Modern Browsers */
+       url("../fonts/robotobold.woff") format("woff"); /* Modern Browsers */
   font-display: swap;
 }
 
@@ -86,7 +86,7 @@ body {
   min-width: 1200px;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -272,16 +272,11 @@ img {
   color: var(--basic-red);
 }
 
-/* Неменяется лого */
-.main-header-logo img::after:active {
-  content: "";
-  position: absolute;
-  width: 160px;
-  height: 65px;
-  background-image: url("../img/nerds-logo-before.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
+/* Неменяется лого
+
+.main-header-logo:active img {
+  opacity: 0.3;
+} */
 
 .site-navigation a:active,
 .cart-navigation a:active {
@@ -631,7 +626,7 @@ img {
   padding-left: 4px;
 }
 
-.item-partner::after {
+.item-partner:not(:last-child)::after {
   content: "";
   position: absolute;
   top: 60px;
@@ -1015,48 +1010,25 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   cursor: pointer;
 }
 
-.control-current {
-  color: black;
+.control-min path,
+.control-max path {
+  fill: var(--special-gray-sort);
+  opacity: 0.1;
 }
 
 
+.control-current svg path {
+  fill: var(--special-black);
+  opacity: 1;
+}
 
-/* .sort-control-min,
-.sort-control-max {
-  position: relative;
-  list-style: none;
-} */
-
-/* .sort-control-min::after {
-  position: absolute;
-  content: "";
-  top: 11px;
-  left: 7px;
-  border: 6px solid transparent;
-  border-top: 10px solid var(--special-black);
-  opacity: 0.5;
-  cursor: pointer;
-  outline: 5px solid  rgba(10, 255, 2, 0.3);
-  outline-offset: -5px;
-} */
-
-/* .sort-control-max::after {
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: 37px;
-  border: 6px solid transparent;
-  border-bottom: 10px solid var(--special-black);
-  opacity: 0.5;
-  cursor: pointer;
-} */
-
-/* .sort-control-min::after:hover,
-.sort-control-max::after,
-.sort-control-min::after:focus,
-.sort-control-max::after {
-  border-color: var(--special---special-gray-sort);
-} */
+.control-min path:hover,
+.control-min path:focus,
+.control-max path:hover,
+.control-max path:focus  {
+  fill: var(--special-gray-sort);
+  opacity: 1;
+}
 
 /* Catalog */
 
@@ -1071,7 +1043,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   flex-wrap: wrap;
   width: 760px;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 27px;
   padding: 0;
   list-style: none;
   /* Скрыл рамки */
@@ -1090,7 +1062,8 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   outline-offset: -5px; */
 }
 
-.catalog-item:nth-child(2n) {
+.catalog-item:nth-child(2n),
+.catalog-item:last-child {
   margin-right: 0px;
 }
 
@@ -1099,7 +1072,12 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   height: 40px;
 }
 
+.catalog-item-strip path{
+  opacity: 0.1;
+}
+
 .catalog-item .catalog-item-link {
+  position: relative;
   width: 360px;
   height: 580px;
   background-color: var(--special-white-smoke);
@@ -1110,9 +1088,19 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   outline-offset: -5px; */
 }
 
-.catalog-item-current {
+.catalog-item:hover .catalog-item-sample,
+.catalog-item:focus .catalog-item-sample {
+  display: block;
+}
+
+.catalog-item:hover .catalog-item-link,
+.catalog-item:focus .atalog-item-link {
   box-shadow: 0px 6px 15px rgba(0, 1, 1, 0.25);
-  border-radius: 5px;
+}
+
+.catalog-item:hover path,
+.catalog-item:focus path {
+  opacity: 1;
 }
 
 .catalog-item-link img {
@@ -1121,27 +1109,37 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
 .catalog-item-sample {
+  display: none;
   position: absolute;
-  bottom: 0px;
+  bottom: -1px;
   width: 360px;
   height: 231px;
   text-align: center;
   background-color: var(--basic-whisper);
+  border-radius: 0 0 5px 5px;
 }
 
-.catalog-item-sample h3 {
-  margin-top: 20px;
-  margin-bottom: 6px;
-  padding: 8px;
+.catalog-item-sample .catalog-item-name {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  box-sizing: border-box;
+  /* outline: 5px solid  rgba(2, 6, 255, 0.3);
+  outline-offset: -5px; */
+}
+
+.catalog-item-name h3 {
+  margin-top: 27px;
+  padding: 0;
   font-size: 18px;
   line-height: 30px;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--basic-black);
-  box-sizing: border-box;
   /* outline: 5px solid  rgba(2, 6, 255, 0.3);
   outline-offset: -5px; */
 }
+
 
 .catalog-item-sample h3:hover,
 .catalog-item-sample h3:focus {
@@ -1155,8 +1153,8 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
 .catalog-item-sample p {
-  margin: 0;
-  margin-bottom: 32px;
+  margin-top: -5px;
+  margin-bottom: 34px;
   line-height: 18px;
   color: var(--basic-dim-gray);
   /* outline: 5px solid  rgba(2, 6, 255, 0.3);
@@ -1234,10 +1232,14 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 .pagination-item-current a:active {
   background-color: var(--special-light-gray);
   box-shadow: inset 0px 3px 0px var(--special-dark);
- }  /*Принажатии кнопки, хочеться болле т>мный фон. Меня вводит сомнения как работает свойство mix-blend-mode*/
+ }
 
- .pagination-item:last-child a:hover,
- .pagination-item:last-child a:focus{
+ .pagination-item span:active {
+   opacity: 0.3;
+ }
+
+.pagination-item:last-child a:hover,
+.pagination-item:last-child a:focus{
   padding: 17px 77px 15px 78px;
   background-color: var(--special-gainsboro);
   border: none;
@@ -1268,7 +1270,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   width: 1440px;
   height: 416px;
   margin: 0 auto;
-  background-image: url("../img/map.png"); /* Нужно оцентрировать карту */
+  background-image: url("../img/map.png");
   background-position: center;
   background-repeat: no-repeat;
   /* Скрыл рамки */
@@ -1514,6 +1516,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   display: flex;
   width: 88px;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .slider-controls .button-controls-slider {
@@ -1565,6 +1568,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   width: 761px;
   height: 441px ;
   padding: 64px 100px 84px;
+  z-index: 10;
   /* outline: 5px solid var(--grid-myrtle);
   outline-offset: -5px; */
 }
@@ -1599,12 +1603,18 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 
 .modal-request-form input,
 .modal-request-form textarea {
+  padding-left: 15px;
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
   color: var(--basic-charcoal);
   opacity: 0.5;
 }
+
+.modal-request-form textarea {
+  padding-top: 15px;
+}
+
 
 .modal-request-form input,
 .modal-request-form textarea {
@@ -1668,38 +1678,22 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 
 .modal-close {
   position: absolute;
-  top: 74px;
-  right: 91px;
+  top: 76px;
+  right: 97px;
   width: 21px;
   height: 21px;
   background-color: transparent;
-  border: 0;
+  border: none;
   cursor: pointer;
 }
 
-.modal-close::before,
-.modal-close::after {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: -3px;
-  width: 27px;
-  height: 3px;
-  /* background-color: red; */
-  background: var(--basic-red);
+.modal-close path:hover ,
+.modal-close path:focus {
+  fill: var(--basic-red);
   opacity: 0.3;
 }
 
-.modal-close::before {
-  transform: rotate(45deg);
+.modal-close path:active {
+  fill: var(--basic-red);
+  opacity: 0.1;
 }
-
-.modal-close::after {
-  transform: rotate(-45deg);
-}
-
-/* Незнаю как сделать focus */
-/* .modal-close:hover,
-.modal-close:focus {
-  opacity: 1;
-} */
