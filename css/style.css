@@ -48,6 +48,9 @@
   --special-white: rgba(0, 0, 0, 0.0001);
   --special-shadow: rgba(0, 0, 0, 0.15);
   --special-shadow-madal: rgba(0, 0, 0, 0.25);
+  --special-dark-shadow: rgba(0, 0, 0, 0.25);
+  --special-color-shadow: rgba(0, 1, 1, 0.1);
+  --special-color-dark-shadow: rgba(0, 1, 1, 0.25);
   --special-black: #231F20;
   --special-matterhorn: #4D4D4D;
   --special-gray-sort: #A6A6A6;
@@ -69,7 +72,7 @@
   --special-gradient-gray: #E1E1E1;
   --special-gradient-red: #E74246;
   --special-gradient-dark-red: #D7373B;
-  --special-wild-watermelon:rgba(251, 86, 90, 0.3);
+  --special-wild-watermelon: rgba(251, 86, 90, 0.3);
 
   /* --grid-scarlet:  rgba(255, 36, 0, 0.3);
   --grid-indigo: rgba(75, 0, 130, 0.3);
@@ -1019,8 +1022,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   opacity: 0.1;
 }
 
-
-.control-current svg path {
+.control-current path {
   fill: var(--special-black);
   opacity: 1;
 }
@@ -1098,7 +1100,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 
 .catalog-item:hover .catalog-item-link,
 .catalog-item:focus .atalog-item-link {
-  box-shadow: 0px 6px 15px rgba(0, 1, 1, 0.25);
+  box-shadow: 0px 6px 15px var(--special-color-dark-shadow);
 }
 
 .catalog-item:hover path,
@@ -1178,7 +1180,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 
 .button-catalog:active {
   background-color: var(--special-extra-dark-red);
-  box-shadow: inset 0px 3px 0px rgba(0, 1, 1, 0.1);
+  box-shadow: inset 0px 3px 0px var(--special-color-shadow);
   border-radius: 3px;
 }
 
@@ -1558,7 +1560,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   margin: auto;
   color: var(--basic-black);
   background-color: var(--basic-white);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 4px 4px var(--special-dark-shadow);
 }
 
 section.modal-show {
