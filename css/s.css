@@ -1286,10 +1286,10 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 
 .location-company {
   position: absolute;
-  top: 54pxpx;
+  top: 54px;
   width: 319px;
   height: 308px;
-  margin: 0 140px;
+  margin: 0;
   padding-top: 30px;
   padding-left: 50px;
   align-self: center;
