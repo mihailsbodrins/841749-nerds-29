@@ -1559,6 +1559,10 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.modal-show {
+  display: block;
+}
+
 /* Modal login */
 
 .modal-request {
