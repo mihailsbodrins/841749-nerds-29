@@ -250,11 +250,11 @@ img {
 }
 
 /* свойство для активной странице */
-.current-site-navigation a{
+.current-site-navigation a {
   position: relative;
  }
 
- .current-site-navigation a::after{
+ .current-site-navigation a::after {
   position: absolute;
   top: 63px;
   left: 20%;
@@ -263,7 +263,6 @@ img {
   height: 2px;
   background-color: var(--basic-red);
  }
-
 
 .site-navigation a:hover,
 .site-navigation a:focus,
@@ -387,7 +386,7 @@ img {
   background-color: var(--special-dark-red);
 }
 
-.button:active span{
+.button:active span {
   opacity: 0.3;
   mix-blend-mode: screen;
 }
@@ -847,7 +846,7 @@ img {
   opacity: 0.5
 }
 
-.filter-input-checkbox:checked + label::before  {
+.filter-input-checkbox:checked + label::before {
   content: "";
   position: absolute;
   top: -2px;
@@ -864,7 +863,7 @@ img {
 .filter-input:hover + label::before,
 .filter-input:focus + label::before,
 .filter-input-radio:checked:hover + label::after,
-.filter-input-radio:checked:focus + label::after  {
+.filter-input-radio:checked:focus + label::after {
   opacity: 1;
 }
 
@@ -927,7 +926,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   outline-offset: -5px; */
 }
 
-.sort-type-list{
+.sort-type-list {
   display: flex;
   width: 471px;
   flex-wrap: wrap;
@@ -996,11 +995,11 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   outline-offset: -5px; */
 }
 
-.sort-control-min{
+.sort-control-min {
   padding: 8px;
 }
 
-.sort-control-max{
+.sort-control-max {
   padding: 8px 0 8px 10px;
 }
 
@@ -1028,7 +1027,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 .control-min path:hover,
 .control-min path:focus,
 .control-max path:hover,
-.control-max path:focus  {
+.control-max path:focus {
   fill: var(--special-gray-sort);
   opacity: 1;
 }
@@ -1075,7 +1074,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   height: 40px;
 }
 
-.catalog-item-strip path{
+.catalog-item-strip path {
   opacity: 0.1;
 }
 
@@ -1209,13 +1208,13 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   border-radius: 3px;
 }
 
-.pagination-item:last-child a{
+.pagination-item:last-child a {
   margin-right: 0;
   padding: 17px 77px 15px 78px;
   text-transform: uppercase;
 }
 
-.pagination-item-current a{
+.pagination-item-current a {
   padding: 14px 17px 12px;
   background-color: var(--special-white);
   border: 3px solid var(--special-border-gray);
@@ -1242,7 +1241,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
  }
 
 .pagination-item:last-child a:hover,
-.pagination-item:last-child a:focus{
+.pagination-item:last-child a:focus {
   padding: 17px 77px 15px 78px;
   background-color: var(--special-gainsboro);
   border: none;
@@ -1311,7 +1310,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
 }
 
 .location-address,
-.contacts-phone  {
+.contacts-phone {
   padding-top: 5px;
   padding-left: -4px;
   font-size: 16px;
@@ -1363,7 +1362,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   outline-offset: -5px; */
 }
 
-.social-discount p:first-child{
+.social-discount p:first-child {
   margin: 0;
   padding-bottom: 10px;
   font-size: 36px;
@@ -1405,7 +1404,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   left: 32px;
 }
 
-.social-button .svg-instagram{
+.social-button .svg-instagram {
   position: absolute;
   top: 28px;
   left: 28px;
@@ -1417,7 +1416,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   background: linear-gradient(0deg, var(--special-gradient-red), var(--special-gradient-red)), var(--basic-white);
 }
 
-.social-button:active path{
+.social-button:active path {
   opacity: 0.3;
   mix-blend-mode: screen;
   background: linear-gradient(0deg, var(--special-gradient-dark-red), var(--special-gradient-dark-red)), var(--basic-white);
@@ -1483,7 +1482,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   position: relative;
 }
 
-.slider-block-list{
+.slider-block-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1532,7 +1531,7 @@ box-shadow: inset 0px 3px 0px var(--special-dark);
   cursor: pointer;
 }
 
-.slider-controls .current::after   {
+.slider-controls .current::after {
   content: "";
   position: absolute;
   top: 3px;
